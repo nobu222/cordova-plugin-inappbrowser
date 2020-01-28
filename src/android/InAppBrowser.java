@@ -118,7 +118,7 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String FOOTER_COLOR = "footercolor";
     private static final String BEFORELOAD = "beforeload";
     private static final String DISABLE_HARDWARE_BACK = "disableHardwareBack";
-    private static final String DEFAULT_DISABLE_HARDWARE_BACK = false;
+    private static final Boolean DEFAULT_DISABLE_HARDWARE_BACK = false;
 
     private static final List customizableOptions = Arrays.asList(CLOSE_BUTTON_CAPTION, TOOLBAR_COLOR, NAVIGATION_COLOR, CLOSE_BUTTON_COLOR, FOOTER_COLOR);
 
