@@ -117,6 +117,8 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String FOOTER = "footer";
     private static final String FOOTER_COLOR = "footercolor";
     private static final String BEFORELOAD = "beforeload";
+    private static final String DISABLE_HARDWARE_BACK = "disableHardwareBack";
+    private static final String DEFAULT_DISABLE_HARDWARE_BACK = false;
 
     private static final List customizableOptions = Arrays.asList(CLOSE_BUTTON_CAPTION, TOOLBAR_COLOR, NAVIGATION_COLOR, CLOSE_BUTTON_COLOR, FOOTER_COLOR);
 
@@ -149,6 +151,7 @@ public class InAppBrowser extends CordovaPlugin {
     private String beforeload = "";
     private String[] allowedSchemes;
     private InAppBrowserClient currentClient;
+    private boolean disableHardwareBack = false;
 
     /**
      * Executes the request and returns PluginResult.
@@ -713,6 +716,12 @@ public class InAppBrowser extends CordovaPlugin {
             }
             if (features.get(BEFORELOAD) != null) {
                 beforeload = features.get(BEFORELOAD);
+            }
+            String disableHardwareBackSet = features.get(DISABLE_HARDWARE_BACK);
+            if (disableHardwareBackSet != null) {
+                disableHardwareBack = disableHardwareBackSet.equals("yes") ? true : false;
+            } else {
+                disableHardwareBack = DEFAULT_DISABLE_HARDWARE_BACK;
             }
         }
 
