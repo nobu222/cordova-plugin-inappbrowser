@@ -588,6 +588,14 @@ public class InAppBrowser extends CordovaPlugin {
     }
 
     /**
+     * Disabled the hardware back button
+     * @return boolean
+     */
+    public boolean disableHardwareBack() {
+        return disableHardwareBack;
+    }
+
+    /**
      * Checks to see if it is possible to go forward one page in history, then does so.
      */
     private void goForward() {
